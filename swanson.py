@@ -19,6 +19,7 @@ class Swanson(commands.Cog):
     async def swanson(self, ctx):
         async with aiohttp.ClientSession() as session:
             data = await session.get('https://ron-swanson-quotes.herokuapp.com/v2/quotes')
+            data await data.text # convert to a string
             quote = data[2:-2] # slice extraneous characters
         embed = discord.Embed(description=quote)
         # await ctx.message.delete()
