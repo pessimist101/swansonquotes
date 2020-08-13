@@ -22,7 +22,6 @@ class Swanson(commands.Cog):
             data = await data.json()
             quote = data[0]
         embed = discord.Embed(description=quote)
-        # await ctx.message.delete()
         await ctx.send(embed=embed)
 
 def setup(client):
